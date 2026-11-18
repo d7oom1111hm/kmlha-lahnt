@@ -1,0 +1,25 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#091a2a"><title>الكلمات | لوحة اللعب</title><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><script defer src="shared.js"></script><script defer src="game.js"></script></head><body><header class="top"><div class="bar"><a class="brand" href="index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>الكلمات</a><nav aria-label="التنقل"><a href="index.html" aria-current="page"><i data-icon="board"></i>لوحة اللعب</a></nav><button id="screen" class="icon-btn fullscreen" aria-label="ملء الشاشة" title="ملء الشاشة"><i data-icon="screen"></i></button></div></header>
+<main class="shell">
+  <div class="page-head"><h1>سلسلة الكلمات</h1><button id="rules" class="quiet"><i data-icon="help"></i>طريقة اللعب</button></div>
+  <p id="notice" class="notice" role="status" hidden></p>
+  <div class="layout">
+    <section class="board panel" aria-labelledby="round-title">
+      <div class="board-head"><span class="board-symbol"><i data-icon="chain"></i></span><div><h2 id="round-title">الجولة الأولى</h2><p id="range"></p></div><span class="round-id" id="round-id"></span></div>
+      <ol id="chain" class="chain"></ol>
+      <div class="board-foot"><button id="next" class="gold">الجولة التالية <i data-icon="left"></i></button><button id="reset" class="flat"><i data-icon="reset"></i>إعادة الجولة</button></div>
+    </section>
+    <aside>
+      <section class="panel scores"><div class="section-title"><i data-icon="trophy"></i><h2>نقاط الفريقين</h2></div><div id="teams"></div></section>
+      <section class="panel rounds"><div class="section-title"><i data-icon="grid"></i><h2>الجولات</h2></div><div id="rounds" class="round-grid"></div></section>
+    </aside>
+  </div>
+</main>
+<dialog id="guide"><div class="dialog-head"><h2>طريقة اللعب</h2><button class="icon-btn" data-close aria-label="إغلاق"><i data-icon="x"></i></button></div><p>ابدأ من أول السلسلة أو آخرها. كل كلمتين متجاورتين تكوّنان عبارة.</p><div class="example"><b>فتح</b><i data-icon="left"></i><b>باب</b><i data-icon="left"></i><b>السيارة</b></div><p>اضغط على كلمة مخفية لتخمينها، أو استخدم أزرار الكشف. يسجّل المقدّم النقاط للفريق الذي يجيب.</p></dialog>
+<dialog id="letter-picker" aria-labelledby="letter-title">
+  <div class="dialog-head"><h2 id="letter-title">أي حرف تبي تكشف؟</h2><button type="button" class="icon-btn" data-close aria-label="إغلاق"><i data-icon="x"></i></button></div>
+  <div id="letter-positions"></div>
+</dialog>
+<dialog id="guess"><form id="guess-form"><div class="dialog-head"><h2 id="guess-title"></h2><button type="button" class="icon-btn" data-close aria-label="إغلاق"><i data-icon="x"></i></button></div><label>تخمينك<input id="answer" maxlength="32" autocomplete="off" required></label><p id="feedback" role="status"></p><button class="gold">تحقق</button></form></dialog>
+<dialog id="confirm"><h2>إعادة الجولة؟</h2><p>ستُخفى كلمات هذه الجولة من جديد.</p><div class="actions"><button id="do-reset" class="gold">إعادة الجولة</button><button class="quiet" data-close>إلغاء</button></div></dialog>
+<dialog id="result"><h2>نتيجة اللعب</h2><div id="result-scores"></div><div class="actions"><button class="gold" id="restart">لعبة جديدة</button><button data-close class="quiet">العودة للوحة</button></div></dialog>
+</body></html>
